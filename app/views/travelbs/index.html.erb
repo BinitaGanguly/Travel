@@ -1,0 +1,16 @@
+<h1>Travel</h1>
+<ul>
+  <% @travelbs.each do |t| %>
+    <li>
+      <%= link_to t.name, travelb_path(t.id) %><br>
+      <%= link_to "Edit user", edit_travelb_path(t.id) %>
+      <%= link_to "Destroy", travelb_path(t.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+      
+    </li>
+  <% end %>
+  
+</ul>
+<%= link_to "New user", new_travelb_path %>

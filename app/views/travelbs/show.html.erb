@@ -1,0 +1,14 @@
+<h1>Name: <%= @travelblog.name %></h1>
+<h1>Place to visit: <%= @travelblog.place_to_visit %></h1>
+<h1>Contact number: <%= @travelblog.contact_number %></h1>
+<h1>E-mail Id: <%= @travelblog.email_id %></h1>
+
+<ul>
+  <li><%= link_to "Edit", edit_travelb_path(@travelblog.id) %></li>
+  <li><%= link_to "Destroy", travelb_path(@travelblog.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+
+</ul>
+
