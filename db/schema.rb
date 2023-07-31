@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_16_142840) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_26_052533) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "newtables", force: :cascade do |t|
+    t.string "gurdian_name"
+    t.date "dob"
+    t.string "aadhar_no"
+    t.string "pan_card_no"
+    t.string "belongs_to"
+    t.bigint "trip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.index ["trip_id"], name: "index_newtables_on_trip_id"
+  end
 
   create_table "travelblogs", force: :cascade do |t|
     t.string "name"
@@ -23,4 +36,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_16_142840) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "trips", force: :cascade do |t|
+    t.string "name"
+    t.string "contact_no"
+    t.string "email_id"
+    t.integer "no_of_people"
+    t.string "name_of_place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "date_for_tour"
+    t.datetime "return_date"
+    t.string "status"
+  end
+
+  add_foreign_key "newtables", "trips"
 end

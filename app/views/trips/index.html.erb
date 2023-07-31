@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Tavel & Tourisam page</h1>
+
+  <ul>
+    <% @trips.each do |a| %>
+      <li>
+        <%= link_to a.name, trip_path(a.id) %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "New Registration", new_trip_path %>
+</div>
