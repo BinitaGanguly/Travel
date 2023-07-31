@@ -1,0 +1,19 @@
+
+<table class="table">
+
+  
+<tbody>
+<tr>
+
+      <td><%=newtable.gurdian_name%></td>
+      <td><%=newtable.dob%></td>
+      <td><%=newtable.aadhar_no%></td>
+      <td><%=newtable.pan_card_no%></td>
+      <td><%= link_to "Destroy Comment", [newtable.trip, newtable], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %></td>
+    </tr>
+</tbody>
+</table>
+

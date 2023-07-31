@@ -1,0 +1,56 @@
+
+<h2>Details</h2>
+<table class="table">
+  <thead >
+    <tr>
+      <th scope="col">Name:</th>
+      <th scope="col">Contact number:</th>
+      <th scope="col">E-mail Id:</th>
+      <th scope="col">Number of companions:</th>
+      <th scope="col" >Place to visit:</th>
+      <th scope="col">Date for the journey:</th>
+      <th scope="col">End date for journey:</th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+
+     </tr>
+  </thead>
+  
+<tbody>
+<tr>
+
+      <td><%=@trip.name%></td>
+      <td><%=@trip.contact_no%></td>
+      <td><%=@trip.email_id%></td>
+      <td><%=@trip.no_of_people%></td>
+      <td><%=@trip.name_of_place%></td>
+      <td><%=@trip.date_for_tour%></td>
+      <td><%=@trip.return_date%></td>
+      <td><%= link_to "Edit", edit_trip_path(@trip) %></td>
+      <td><%= link_to "Destroy", trip_path(@trip), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+    </tr>
+</tbody>
+</table>
+
+
+
+<h2>Details of the person visiting:</h2>
+<table class="table">
+  <thead >
+    <tr>
+      <th scope="col">Companion Name:</th>
+      <th scope="col">Date of Birth:</th>
+      <th scope="col">Aadhar No.:</th>
+      <th scope="col" >Pan Card No.:</th>
+      <th scope="col"> </th>
+
+     </tr>
+  </thead>
+</table>
+<%= render @trip.newtables %>
+
+<h2>Add Details:</h2>
+<%= render 'newtables/form' %>

@@ -1,0 +1,56 @@
+<%= form_with model: trip do |form| %>
+  <div>
+    <%= form.label :name,style: "display: block" %><br>
+    <%= form.text_field :name %>
+    <% trip.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :contact_no ,style: "display: block"%><br>
+    <%= form.text_area :contact_no %><br>
+    <% trip.errors.full_messages_for(:contact_no).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :email_id ,style: "display: block"%><br>
+    <%= form.text_area :email_id %><br>
+    <% trip.errors.full_messages_for(:email_id).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :no_of_people,style: "display: block" %><br>
+    <%= form.text_area :no_of_people %><br>
+    <% trip.errors.full_messages_for(:no_of_people).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :name_of_place,style: "display: block" %><br>
+    <%= form.text_area :name_of_place %><br>
+    <% trip.errors.full_messages_for(:name_of_place).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :date_for_tour,style: "display: block" %><br>
+    <%= form.date_field :date_for_tour %><br>
+    <% trip.errors.full_messages_for(:date_for_tour).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :return_date,style: "display: block" %><br>
+    <%= form.date_field :return_date %><br>
+    <% trip.errors.full_messages_for(:return_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

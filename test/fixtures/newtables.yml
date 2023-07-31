@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gurdian_name: MyString
+  dob: 2023-07-24
+  aadhar_no: MyString
+  pan_card_no: MyString
+  belongs_to: MyString
+  trip: one
+
+two:
+  gurdian_name: MyString
+  dob: 2023-07-24
+  aadhar_no: MyString
+  pan_card_no: MyString
+  belongs_to: MyString
+  trip: two

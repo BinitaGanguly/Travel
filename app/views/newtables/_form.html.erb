@@ -1,0 +1,21 @@
+<%= form_with model: [ @trip, @trip.newtables.build ] do |form| %>
+  <p>
+    <%= form.label :gurdian_name, style: "display: block" %><br>
+    <%= form.text_field :gurdian_name %>
+  </p>
+  <p>
+    <%= form.label :dob,style: "display: block" %><br>
+    <%= form.date_field :dob %>
+  </p>
+   <p>
+    <%= form.label :aadhar_no,style: "display: block" %><br>
+    <%= form.text_area :aadhar_no %>
+  </p>
+  <p>
+    <%= form.label :pan_card_no,style: "display: block" %><br>
+    <%= form.text_area :pan_card_no %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
