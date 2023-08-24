@@ -1,6 +1,20 @@
 
-<h2>Details</h2>
-<table class="table">
+<style>
+body{
+  background: lavender;
+}
+</style>
+
+<div class="text-center">
+<h1 class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">Details</h1>
+</div>
+
+<% if @trip.image.attached? %>
+  <%= image_tag @trip.image, style:"width:450px;height:350px;" %><br>
+    <%= link_to 'Download', @trip.image, download: '',class:"btn btn-primary"%>
+<%end%><br>
+<table class="table table-striped-columns"><br>
+
   <thead >
     <tr>
       <th scope="col">Name:</th>
@@ -17,8 +31,7 @@
   </thead>
   
 <tbody>
-<tr>
-
+  <tr>
       <td><%=@trip.name%></td>
       <td><%=@trip.contact_no%></td>
       <td><%=@trip.email_id%></td>
@@ -37,19 +50,8 @@
 
 
 
-<h2>Details of the person visiting:</h2>
-<table class="table">
-  <thead >
-    <tr>
-      <th scope="col">Companion Name:</th>
-      <th scope="col">Date of Birth:</th>
-      <th scope="col">Aadhar No.:</th>
-      <th scope="col" >Pan Card No.:</th>
-      <th scope="col"> </th>
+<h2 class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">Details of the person visiting:</h2>
 
-     </tr>
-  </thead>
-</table>
 <%= render @trip.newtables %>
 
 <h2>Add Details:</h2>

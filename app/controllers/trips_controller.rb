@@ -1,7 +1,9 @@
 class TripsController < ApplicationController
   def index
-    @trips= Trip.all
+    @q = Trip.ransack(params[:q])
+    @trips = @q.result(distinct: true)
   end
+
 
   def show
     @trip= Trip.find(params[:id])
@@ -43,7 +45,7 @@ class TripsController < ApplicationController
 
   private
     def t_params
-      params.require(:trip).permit(:name, :contact_no, :email_id, :no_of_people, :name_of_place, :date_for_tour, :return_date, :status)
+      params.require(:trip).permit(:name, :contact_no, :email_id, :no_of_people, :name_of_place, :date_for_tour, :return_date, :image, :status)
     end
   
 
