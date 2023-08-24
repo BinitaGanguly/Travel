@@ -1,13 +1,37 @@
+<style>
+body{
+  background: lavender;
+}
+</style>
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <div>
+      <% if user_signed_in?%>
+        <%= link_to "Profile", edit_user_registration_path %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>  
+      <% end%>   
+
+      <%= yield %>
+    </div>  
+  </body>
+</html>
+
+
 <div class="container">
   <h1>Tavel & Tourisam page</h1>
 
   <ul>
     <% @trips.each do |a| %>
       <li>
-        <%= link_to a.name, trip_path(a.id) %>
+        <%= link_to a.name_of_place, trip_path(a.id) %>
       </li>
     <% end %>
   </ul>
 
-  <%= link_to "New Registration", new_trip_path %>
+  <%= link_to "New Registration" , new_trip_path ,class:"btn btn-primary"%>
 </div>
